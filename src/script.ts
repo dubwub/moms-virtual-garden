@@ -20,7 +20,7 @@ var dirLight = new THREE.DirectionalLight( 0xffffff );
 dirLight.position.set( 75, 300, -75 );
 scene.add( dirLight );
 
-const ambientLight = new THREE.AmbientLight()
+const ambientLight = new THREE.AmbientLight('white', 4)
 scene.add(ambientLight)
 
 const camera = new THREE.PerspectiveCamera(
@@ -69,13 +69,14 @@ const loader = new GLTFLoader();
 
 // Optional: Provide a DRACOLoader instance to decode compressed mesh data
 const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderConfig({ type: 'js' });
 dracoLoader.setDecoderPath( '/examples/jsm/libs/draco/' );
 loader.setDRACOLoader( dracoLoader );
 
 // Load a glTF resource
 loader.load(
 	// resource URL
-	'clivia-textures-attempt-2.glb',
+	'clivia-textures-attempt-4.glb',
 	// called when the resource is loaded
 	function ( gltf ) {
 
