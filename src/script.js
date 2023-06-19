@@ -11,7 +11,7 @@ light.position.set(0.8, 1.4, 1.0)
 scene.add(light)
 
 const ambientLight = new THREE.AmbientLight()
-// scene.add(ambientLight)
+scene.add(ambientLight)
 
 const camera = new THREE.PerspectiveCamera(
     75,
@@ -33,7 +33,7 @@ controls.target.set(0, 1, 0)
 
 const fbxLoader = new FBXLoader()
 fbxLoader.load(
-    'Clivia miniata.FBX',
+    'clivia-miniata-blender-attempt-1.fbx',
     (object) => {
         // object.traverse(function (child) {
         //     if ((child as THREE.Mesh).isMesh) {
